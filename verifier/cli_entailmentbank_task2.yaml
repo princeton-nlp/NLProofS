@@ -1,0 +1,22 @@
+seed_everything: 1
+trainer:
+  gpus: 1
+  max_epochs: 50
+  callbacks:
+    - class_path: pytorch_lightning.callbacks.LearningRateMonitor
+      init_args: 
+        logging_interval: step
+model:
+  lr: 1e-5
+  warmup_steps: 2500
+  model_name: roberta-large
+  pos_weight: 128
+data:
+  dataset: entailmentbank
+  batch_size: 128
+  num_workers: 2
+  max_num_premises: 4
+  max_input_len: 256
+  irrelevant_distractors_only: true
+  path_train: ../data/entailment_trees_emnlp2021_data_v3/dataset/task_2/train.jsonl
+  path_val: ../data/entailment_trees_emnlp2021_data_v3/dataset/task_2/dev.jsonl

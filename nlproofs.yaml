@@ -1,0 +1,28 @@
+name: nlproofs
+channels:
+  - pytorch
+  - huggingface
+  - etetoolkit
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - cudatoolkit=11.3
+  - pytorch=1.11.0
+  - black
+  - torchmetrics
+  - mypy
+  - pytorch-lightning=1.6.3
+  - ipython
+  - transformers=4.18.0
+  - networkx
+  - ete3=3.1.2
+  - scikit-learn
+  - pypdf3
+  - jsonargparse
+  - docstring_parser
+  - lark
+  - pip
+  - pip:
+    - rank-bm25
+    - datasets

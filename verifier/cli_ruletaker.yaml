@@ -1,0 +1,22 @@
+seed_everything: 1
+trainer:
+  gpus: 1
+  max_epochs: 50
+  callbacks:
+    - class_path: pytorch_lightning.callbacks.LearningRateMonitor
+      init_args: 
+        logging_interval: step
+model:
+  lr: 5e-6
+  warmup_steps: 2500
+  model_name: roberta-large
+  pos_weight: 4
+data:
+  dataset: ruletaker
+  batch_size: 128
+  num_workers: 2
+  max_num_premises: 4
+  max_input_len: 128
+  irrelevant_distractors_only: true
+  path_train: ../data/proofwriter-dataset-V2020.12.3/preprocessed_OWA/depth-3ext/meta-train.jsonl 
+  path_val: ../data/proofwriter-dataset-V2020.12.3/preprocessed_OWA/depth-3ext/meta-dev.jsonl 

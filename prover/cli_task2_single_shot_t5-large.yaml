@@ -1,0 +1,37 @@
+seed_everything: 1
+trainer:
+  gpus: 1
+  gradient_clip_val: 0.5
+  max_epochs: 400
+  accumulate_grad_batches: 32
+  log_every_n_steps: 5
+  check_val_every_n_epoch: 10
+  callbacks:
+    - class_path: pytorch_lightning.callbacks.LearningRateMonitor
+      init_args: 
+        logging_interval: step
+model:
+  stepwise: false
+  max_num_steps: 20
+  lr: 2e-4
+  warmup_steps: 800
+  model_name: t5-large
+  num_beams: 10
+  topk: 10
+  verifier_ckpt: ""
+  verifier_weight: 0
+  proof_search: false
+  oracle_prover: false
+  oracle_verifier: false
+data:
+  dataset: entailmentbank
+  sample_goal: intermediates # hypothesis | intermediates
+  subtree_proved_prob: 0.75
+  subtree_proved_all_or_none: true
+  batch_size: 2
+  num_workers: 2
+  max_input_len: 1024
+  max_output_len: 600
+  path_train: ../data/entailment_trees_emnlp2021_data_v3/dataset/task_2/train.jsonl
+  path_val: ../data/entailment_trees_emnlp2021_data_v3/dataset/task_2/dev.jsonl
+  path_test: ../data/entailment_trees_emnlp2021_data_v3/dataset/task_2/test.jsonl
