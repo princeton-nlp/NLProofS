@@ -14,6 +14,7 @@ Code for the paper:
   - [Data Preprocessing](#data-preprocessing)
   - [EntailmentBank Experiments](#entailmentbank-experiments)
   - [RuleTaker Experiments](#ruletaker-experiments)
+  - [Bugs or Questions](#bugs-or-questions)
   - [Citation](#citation)
   - [Credits](#credits)
 
@@ -148,6 +149,11 @@ python evaluate.py ruletaker --path-val PATH_TO_VAL_RESULTS --path-test PATH_TO_
 | NLProofS           | 99.3 | 99.2 | [prover](https://drive.google.com/file/d/1Js-jCyt8yGvwMyowwOkq-5bn0lvY2FQz/view?usp=sharing), [verifier](https://drive.google.com/file/d/1l2-vCU6TQ4_OtTygXXLGiJ7UUzuDeyN2/view?usp=sharing) | [results_val.json](https://drive.google.com/file/d/1JhCIhPkPdyoNpNhB0uNZr2WXB6ffuSBG/view?usp=sharing) | [results_test.json](https://drive.google.com/file/d/134HjjaYztCb-nLUqtdQ7hWxO4SO1ZW6d/view?usp=sharing) |
 | Stepwise prover    | 68.7 | 91.3 | The `prover` above       | [results_val.json](https://drive.google.com/file/d/1aB3ciVCX2_h9qYVyKJ6qhlJS8T_w26wf/view?usp=sharing) | [results_test.json](https://drive.google.com/file/d/1WO2c1C_4WIjHRVU4emiMzWt4s1lndviV/view?usp=sharing) |
 | Single-shot prover | 56.3 | 72.6 | [prover](https://drive.google.com/file/d/1yg5c2MXnGFVr6b7g9dFCeIAhMyb0gS_m/view?usp=sharing)               | [results_val.json](https://drive.google.com/file/d/1NGtCfAp4F3eUEEGT7J0IGK7-UCP8YYPA/view?usp=sharing) | [results_test.json](https://drive.google.com/file/d/1HeXiKU0IcRTCZ-_0u0unHmZge54E7Iyu/view?usp=sharing) |
+
+
+## Bugs or questions?
+
+If you have any questions related to the code or the paper, feel free to email Kaiyu (`kaiyuy@cs.princeton.edu`). If you encounter any problems when using the code, or want to report a bug, you can open an issue. Please try to specify the problem with details so we can help you better and quicker!
 
 
 ## Citation
