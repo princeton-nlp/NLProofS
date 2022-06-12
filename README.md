@@ -151,7 +151,7 @@ python evaluate.py ruletaker --path-val PATH_TO_VAL_RESULTS --path-test PATH_TO_
 | Single-shot prover | 56.3 | 72.6 | [prover](https://drive.google.com/file/d/1yg5c2MXnGFVr6b7g9dFCeIAhMyb0gS_m/view?usp=sharing)               | [results_val.json](https://drive.google.com/file/d/1NGtCfAp4F3eUEEGT7J0IGK7-UCP8YYPA/view?usp=sharing) | [results_test.json](https://drive.google.com/file/d/1HeXiKU0IcRTCZ-_0u0unHmZge54E7Iyu/view?usp=sharing) |
 
 
-## Bugs or questions?
+## Bugs or Questions
 
 If you have any questions related to the code or the paper, feel free to email Kaiyu (`kaiyuy@cs.princeton.edu`). If you encounter any problems when using the code, or want to report a bug, you can open an issue. Please try to specify the problem with details so we can help you better and quicker!
 
