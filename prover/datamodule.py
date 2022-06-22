@@ -94,7 +94,7 @@ def read_ruletaker_proofs(path: str, is_train: bool) -> List[Example]:
             )
             data.append(
                 {
-                    "answer": not ex["answer"],
+                    "answer": not ex["answer"] if ex["answer"] != "Unknown" else "Unknown",
                     "depth": ex["depth"],
                     "proof": Proof(
                         context,
