@@ -5,6 +5,7 @@
 Code for the paper:  
 
 [Generating Natural Language Proofs with Verifier-Guided Search](https://arxiv.org/abs/2205.12443)      
+Conference on Empirical Methods in Natural Language Processing (EMNLP), 2022  
 [Kaiyu Yang](https://www.cs.princeton.edu/~kaiyuy/), [Jia Deng](https://www.cs.princeton.edu/~jiadeng/), and [Danqi Chen](https://www.cs.princeton.edu/~danqic/)   
 
 
@@ -159,10 +160,10 @@ If you have any questions related to the code or the paper, feel free to email K
 ## Citation
 
 ```bibtex
-@article{yang2022nlproofs,
+@inproceedings{yang2022nlproofs,
   title={Generating Natural Language Proofs with Verifier-Guided Search},
   author={Yang, Kaiyu and Deng, Jia and Chen, Danqi},
-  journal={arXiv preprint arXiv:2205.12443},
+  booktitle={Conference on Empirical Methods in Natural Language Processing (EMNLP)},
   year={2022}
 }
 ```
