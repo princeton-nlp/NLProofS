@@ -26,3 +26,4 @@ dependencies:
   - pip:
     - rank-bm25
     - datasets
+    - openai
