@@ -7,8 +7,6 @@ import itertools
 from tqdm import tqdm
 from collections import defaultdict
 import datasets
-from PyPDF3 import PdfFileWriter, PdfFileReader
-from PyPDF3.pdf import PageObject
 import json
 import tempfile
 import os
@@ -495,6 +493,8 @@ if __name__ == "__main__":
 
     if args.output_pdf is not None:
         from ete3 import TextFace, TreeStyle, NodeStyle
+        from PyPDF3 import PdfFileWriter, PdfFileReader
+        from PyPDF3.pdf import PageObject
 
     if args.dataset == "entailmentbank":
         results = json.load(open(args.path))
