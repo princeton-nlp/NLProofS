@@ -6,7 +6,6 @@ import argparse
 import itertools
 from tqdm import tqdm
 from collections import defaultdict
-from ete3 import TextFace, TreeStyle, NodeStyle
 import datasets
 from PyPDF3 import PdfFileWriter, PdfFileReader
 from PyPDF3.pdf import PageObject
@@ -493,6 +492,9 @@ if __name__ == "__main__":
     parser.add_argument("--output-pdf", type=str, help="Path for outputing the PDF")
     args = parser.parse_args()
     print(args)
+
+    if args.output_pdf is not None:
+        from ete3 import TextFace, TreeStyle, NodeStyle
 
     if args.dataset == "entailmentbank":
         results = json.load(open(args.path))
