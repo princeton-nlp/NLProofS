@@ -197,7 +197,7 @@ def highlight_errors(tree: TreeNode) -> None:
             node.add_face(TextFace(node.score), column=0)
 
 
-def get_tree_style(proof: str, score: Optional[float], is_gt: bool) -> TreeStyle:
+def get_tree_style(proof: str, score: Optional[float], is_gt: bool):
     style = TreeStyle()
     style.branch_vertical_margin = 100
     style.show_leaf_name = False
