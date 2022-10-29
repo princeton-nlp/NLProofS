@@ -6,10 +6,7 @@ import argparse
 import itertools
 from tqdm import tqdm
 from collections import defaultdict
-from ete3 import TextFace, TreeStyle, NodeStyle
 import datasets
-from PyPDF3 import PdfFileWriter, PdfFileReader
-from PyPDF3.pdf import PageObject
 import json
 import tempfile
 import os
@@ -200,7 +197,7 @@ def highlight_errors(tree: TreeNode) -> None:
             node.add_face(TextFace(node.score), column=0)
 
 
-def get_tree_style(proof: str, score: Optional[float], is_gt: bool) -> TreeStyle:
+def get_tree_style(proof: str, score: Optional[float], is_gt: bool):
     style = TreeStyle()
     style.branch_vertical_margin = 100
     style.show_leaf_name = False
@@ -493,6 +490,11 @@ if __name__ == "__main__":
     parser.add_argument("--output-pdf", type=str, help="Path for outputing the PDF")
     args = parser.parse_args()
     print(args)
+
+    if args.output_pdf is not None:
+        from ete3 import TextFace, TreeStyle, NodeStyle
+        from PyPDF3 import PdfFileWriter, PdfFileReader
+        from PyPDF3.pdf import PageObject
 
     if args.dataset == "entailmentbank":
         results = json.load(open(args.path))
