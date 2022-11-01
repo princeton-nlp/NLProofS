@@ -14,7 +14,7 @@ dependencies:
   - mypy
   - pytorch-lightning=1.6.3
   - ipython
-  - transformers=4.18.0
+  - transformers
   - networkx
   - ete3=3.1.2
   - scikit-learn
