@@ -85,11 +85,14 @@ class EntailmentClassifier(pl.LightningModule):
 
     def configure_optimizers(self) -> Dict[str, Any]:
         assert self.trainer is not None
-        max_steps = (
-            self.trainer.max_epochs
-            * len(self.trainer.datamodule.train_dataloader())  # type: ignore
-            // self.trainer.accumulate_grad_batches
-        )
+        if self.trainer.max_steps != -1:
+            max_steps = self.trainer.max_steps
+        else: 
+            max_steps = (
+                self.trainer.max_epochs
+                * len(self.trainer.datamodule.train_dataloader())  # type: ignore
+                // self.trainer.accumulate_grad_batches
+            )
         return get_optimizers(
             self.parameters(),
             self.lr,
