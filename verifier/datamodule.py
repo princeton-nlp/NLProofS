@@ -64,7 +64,7 @@ class EntailmentDataset(Dataset):  # type: ignore
         irrelevant_distractors_only: bool,
     ) -> None:
         super().__init__()
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=max_input_len)
         assert split in ("train", "val")
         self.split = split
         self.max_num_premises = max_num_premises  # The maximum number of premises used in data augmentation.

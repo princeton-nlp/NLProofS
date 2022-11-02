@@ -9,6 +9,7 @@ class CLI(LightningCLI):
         parser.link_arguments("model.model_name", "data.model_name")
         parser.link_arguments("model.stepwise", "data.stepwise")
         parser.link_arguments("data.dataset", "model.dataset")
+        parser.link_arguments("data.max_input_len", "model.max_input_len")
 
 
 def main() -> None:

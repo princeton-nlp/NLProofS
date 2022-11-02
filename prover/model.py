@@ -109,6 +109,7 @@ class EntailmentWriter(pl.LightningModule):
         warmup_steps: int,
         num_beams: int,
         topk: int,
+        max_input_len: int,
         proof_search: bool,
         verifier_weight: float,
         verifier_ckpt: Optional[str] = None,
@@ -135,7 +136,7 @@ class EntailmentWriter(pl.LightningModule):
                 EntailmentClassifier.load_from_checkpoint(verifier_ckpt)
             ]  # Avoid making the verifier a submodule.
 
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=512)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=max_input_len)
         if (
             model_name.startswith("t5-")
             or model_name.startswith("google/t5-v1_1-")

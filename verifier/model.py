@@ -24,7 +24,7 @@ class EntailmentClassifier(pl.LightningModule):
         self.warmup_steps = warmup_steps
         self.pos_weight = pos_weight
         self.max_input_len = max_input_len
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=max_input_len)
         self.encoder = AutoModel.from_pretrained(model_name)
         self.fc = nn.Linear(self.encoder.config.hidden_size, 1)
         self.metrics = {
