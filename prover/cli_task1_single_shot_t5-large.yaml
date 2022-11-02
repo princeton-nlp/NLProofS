@@ -18,8 +18,8 @@ model:
   model_name: t5-large
   num_beams: 10
   topk: 10
-  verifier_ckpt: ""
-  verifier_weight: 0
+  verifier_ckpt: null
+  verifier_weight: 0.0
   proof_search: false
   oracle_prover: false
   oracle_verifier: false

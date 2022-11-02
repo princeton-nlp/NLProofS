@@ -92,9 +92,13 @@ def read_ruletaker_proofs(path: str, is_train: bool) -> List[Example]:
                     "all_proofs": ex["proofs"],
                 }
             )
+            if ex["answer"] == "Unknown":
+                ans = "Unknown"
+            else:
+                ans = not ex["answer"]
             data.append(
                 {
-                    "answer": not ex["answer"] if ex["answer"] != "Unknown" else "Unknown",
+                    "answer": ans,
                     "depth": ex["depth"],
                     "proof": Proof(
                         context,
@@ -133,7 +137,7 @@ class EntireProofsDataset(Dataset):  # type: ignore
         is_train: bool,
     ) -> None:
         super().__init__()
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=512)
         self.max_input_len = max_input_len
         self.max_output_len = max_output_len
         self.is_train = is_train
@@ -207,7 +211,7 @@ class StepwiseDataset(Dataset):  # type: ignore
         is_train: bool,
     ) -> None:
         super().__init__()
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=512)
         self.max_input_len = max_input_len
         self.max_output_len = max_output_len
         self.sample_goal = sample_goal

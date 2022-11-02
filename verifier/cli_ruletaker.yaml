@@ -10,7 +10,7 @@ model:
   lr: 5e-6
   warmup_steps: 2500
   model_name: roberta-large
-  pos_weight: 4
+  pos_weight: 4.0
 data:
   dataset: ruletaker
   batch_size: 128

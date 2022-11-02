@@ -10,7 +10,7 @@ model:
   lr: 1e-5
   warmup_steps: 2500
   model_name: roberta-large
-  pos_weight: 128
+  pos_weight: 128.0
 data:
   dataset: entailmentbank
   batch_size: 128

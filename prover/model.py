@@ -109,11 +109,11 @@ class EntailmentWriter(pl.LightningModule):
         warmup_steps: int,
         num_beams: int,
         topk: int,
-        verifier_ckpt: str,
-        verifier_weight: float,
         proof_search: bool,
-        oracle_prover: bool,
-        oracle_verifier: bool,
+        verifier_weight: float,
+        verifier_ckpt: Optional[str] = None,
+        oracle_prover: Optional[bool] = False,
+        oracle_verifier: Optional[bool] = False,
     ) -> None:
         super().__init__()
         self.save_hyperparameters()
@@ -129,12 +129,13 @@ class EntailmentWriter(pl.LightningModule):
         self.oracle_prover = oracle_prover
         self.oracle_verifier = oracle_verifier
         if stepwise and verifier_weight > 0:
-            assert verifier_weight <= 1
+            assert verifier_weight <= 1.0
+            assert verifier_ckpt is not None
             self.verifiers = [
                 EntailmentClassifier.load_from_checkpoint(verifier_ckpt)
             ]  # Avoid making the verifier a submodule.
 
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=512)
         if (
             model_name.startswith("t5-")
             or model_name.startswith("google/t5-v1_1-")
