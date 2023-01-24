@@ -147,7 +147,6 @@ python evaluate.py ruletaker --path-val PATH_TO_VAL_RESULTS --path-test PATH_TO_
 
 ### Test Results and Model Checkpoints
 
-Slide right to see download links in the table below.
 
 | Model         | Answer accuracy       | Proof accuracy     | Model checkpoints | Validation predictions | Test predictions  | 
 | ------------- | -------- | -------- | --------------- | ------------- | ----------------- |
