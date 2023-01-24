@@ -82,6 +82,8 @@ Validation and testing results are saved as `./prover/lightning_logs/EXP_ID/resu
 
 ### Test Results and Model Checkpoints
 
+Slide right to see download links in the tables below.
+
 #### Task 1
 
 | Model         | Leaves-F1       | Leaves-AllCorrect      | Steps-F1      | Steps-AllCorrect       | Intermediates-F1       | Intermediates-AllCorrect       | Overall-AllCorrect       | Model checkpoints | Validation predictions | Test predictions  | 
@@ -144,6 +146,8 @@ python evaluate.py ruletaker --path-val PATH_TO_VAL_RESULTS --path-test PATH_TO_
 ```
 
 ### Test Results and Model Checkpoints
+
+Slide right to see download links in the table below.
 
 | Model         | Answer accuracy       | Proof accuracy     | Model checkpoints | Validation predictions | Test predictions  | 
 | ------------- | -------- | -------- | --------------- | ------------- | ----------------- |
