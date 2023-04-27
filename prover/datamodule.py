@@ -138,7 +138,9 @@ class EntireProofsDataset(Dataset):  # type: ignore
     ) -> None:
         super().__init__()
         max_len = max(max_input_len, max_output_len)
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=max_len)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name, model_max_length=max_len
+        )
         self.max_input_len = max_input_len
         self.max_output_len = max_output_len
         self.is_train = is_train
@@ -213,7 +215,9 @@ class StepwiseDataset(Dataset):  # type: ignore
     ) -> None:
         super().__init__()
         max_len = max(max_input_len, max_output_len)
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=max_len)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name, model_max_length=max_len
+        )
         self.max_input_len = max_input_len
         self.max_output_len = max_output_len
         self.sample_goal = sample_goal

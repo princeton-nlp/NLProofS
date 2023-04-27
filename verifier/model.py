@@ -6,7 +6,14 @@ import torch.nn as nn
 import torch.nn.functional as F
 import pytorch_lightning as pl
 from transformers import AutoTokenizer, AutoModel
-from torchmetrics.classification import BinaryAccuracy, BinaryAveragePrecision, BinaryF1Score, BinarySpecificity, BinaryRecall, BinaryPrecision
+from torchmetrics.classification import (
+    BinaryAccuracy,
+    BinaryAveragePrecision,
+    BinaryF1Score,
+    BinarySpecificity,
+    BinaryRecall,
+    BinaryPrecision,
+)
 
 
 class EntailmentClassifier(pl.LightningModule):
@@ -24,7 +31,9 @@ class EntailmentClassifier(pl.LightningModule):
         self.warmup_steps = warmup_steps
         self.pos_weight = pos_weight
         self.max_input_len = max_input_len
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=max_input_len)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name, model_max_length=max_input_len
+        )
         self.encoder = AutoModel.from_pretrained(model_name)
         self.fc = nn.Linear(self.encoder.config.hidden_size, 1)
         self.metrics = {
@@ -87,7 +96,7 @@ class EntailmentClassifier(pl.LightningModule):
         assert self.trainer is not None
         if self.trainer.max_steps != -1:
             max_steps = self.trainer.max_steps
-        else: 
+        else:
             max_steps = (
                 self.trainer.max_epochs
                 * len(self.trainer.datamodule.train_dataloader())  # type: ignore

@@ -136,7 +136,9 @@ class EntailmentWriter(pl.LightningModule):
                 EntailmentClassifier.load_from_checkpoint(verifier_ckpt)
             ]  # Avoid making the verifier a submodule.
 
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, model_max_length=max_input_len)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name, model_max_length=max_input_len
+        )
         if (
             model_name.startswith("t5-")
             or model_name.startswith("google/t5-v1_1-")
@@ -680,7 +682,7 @@ class EntailmentWriter(pl.LightningModule):
         assert self.trainer is not None
         if self.trainer.max_steps != -1:
             max_steps = self.trainer.max_steps
-        else: 
+        else:
             max_steps = (
                 self.trainer.max_epochs
                 * len(self.trainer.datamodule.train_dataloader())  # type: ignore
