@@ -5,8 +5,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import pytorch_lightning as pl
-import torchmetrics
 from transformers import AutoTokenizer, AutoModel
+from torchmetrics.classification import BinaryAccuracy, BinaryAveragePrecision, BinaryF1Score, BinarySpecificity, BinaryRecall, BinaryPrecision
 
 
 class EntailmentClassifier(pl.LightningModule):
@@ -29,20 +29,20 @@ class EntailmentClassifier(pl.LightningModule):
         self.fc = nn.Linear(self.encoder.config.hidden_size, 1)
         self.metrics = {
             "train": {
-                "accuracy": torchmetrics.Accuracy(threshold=0),
-                "average_precision": torchmetrics.AveragePrecision(pos_label=1),
-                "precision": torchmetrics.Precision(),
-                "recall": torchmetrics.Recall(),
-                "specificity": torchmetrics.Specificity(),
-                "f1": torchmetrics.F1Score(),
+                "accuracy": BinaryAccuracy(),
+                "average_precision": BinaryAveragePrecision(pos_label=1),
+                "precision": BinaryPrecision(),
+                "recall": BinaryRecall(),
+                "specificity": BinarySpecificity(),
+                "f1": BinaryF1Score(),
             },
             "val": {
-                "accuracy": torchmetrics.Accuracy(threshold=0),
-                "average_precision": torchmetrics.AveragePrecision(pos_label=1),
-                "precision": torchmetrics.Precision(),
-                "recall": torchmetrics.Recall(),
-                "specificity": torchmetrics.Specificity(),
-                "f1": torchmetrics.F1Score(),
+                "accuracy": BinaryAccuracy(),
+                "average_precision": BinaryAveragePrecision(pos_label=1),
+                "precision": BinaryPrecision(),
+                "recall": BinaryRecall(),
+                "specificity": BinarySpecificity(),
+                "f1": BinaryF1Score(),
             },
         }
         for split, metrics in self.metrics.items():
