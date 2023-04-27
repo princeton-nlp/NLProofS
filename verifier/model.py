@@ -59,7 +59,7 @@ class EntailmentClassifier(pl.LightningModule):
                 self.add_module(f"{name}_{split}", m)
 
     def log_metrics(self, split: str, logit: torch.Tensor, label: torch.Tensor) -> None:
-        for (name, metric) in self.metrics[split].items():
+        for name, metric in self.metrics[split].items():
             metric(logit, label)
             self.log(f"{name}_{split}", metric, on_step=False, on_epoch=True)
 
