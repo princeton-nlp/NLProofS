@@ -17,7 +17,7 @@ Conference on Empirical Methods in Natural Language Processing (EMNLP), 2022
   - [RuleTaker Experiments](#ruletaker-experiments)
   - [Bugs or Questions](#bugs-or-questions)
   - [Citation](#citation)
-  - [Credits](#credits)
+
 
 
 ## Requirements
@@ -110,6 +110,9 @@ Results on Task 3 are produced by evaluating Task 2 models zero-shot on Task 3 d
 | Stepwise prover    | 42.8 | 7.4 | 9.3 | 5.9 | 42.1 | 15.0 | 5.9 | Same as Task 2 | [results_val.json](https://huggingface.co/kaiyuy/NLProofS/resolve/main/prover/entailmentbank_task3/stepwise/results_val.json) | [results_test.json](https://huggingface.co/kaiyuy/NLProofS/resolve/main/prover/entailmentbank_task3/stepwise/results_test.json) |
 | Single-shot prover | 40.5 | 4.4 | 9.1 | 3.8 | 35.3 | 7.9 | 3.8 | Same as Task 2 | [results_val.tsv](https://huggingface.co/kaiyuy/NLProofS/resolve/main/prover/entailmentbank_task3/single_shot/results_val.tsv) | [results_test.tsv](https://huggingface.co/kaiyuy/NLProofS/resolve/main/prover/entailmentbank_task3/single_shot/results_test.tsv) |
 
+Students in Princeton's [COS484](https://princeton-nlp.github.io/cos484/) (Emre Onal, Max Gonzalez Saez-Diez, and Maria Khartchenko) have conducted a comprehensive ablation study and improved our results on EntailmentBank (code available [here](https://github.com/MaxGonzalezSaez-Diez/NLProofS-AblationStudy)).
+
+
 
 ## RuleTaker Experiments
 
@@ -170,8 +173,4 @@ If you have any questions related to the code or the paper, feel free to email [
   year={2022}
 }
 ```
-
-## Credits
- 
-* The code is formatted using [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black).
 
