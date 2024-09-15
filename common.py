@@ -1,6 +1,7 @@
 """
 Some utility functions.
 """
+
 import re
 import torch
 import random

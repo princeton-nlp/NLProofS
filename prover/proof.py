@@ -1,6 +1,7 @@
 """
 Proof steps and proof trees.
 """
+
 from common import *
 import itertools
 

@@ -1,6 +1,7 @@
 """
 Preprocess the RuleTaker dataset into a format similar to EntailmentBank.
 """
+
 from common import *
 from glob import glob
 from lark import Lark
@@ -190,9 +191,9 @@ def main() -> None:
                                 "context": context,
                                 "proofs": proofs,
                                 "answer": answer,
-                                "depth": question["QDep"]
-                                if answer != "Unknown"
-                                else None,
+                                "depth": (
+                                    question["QDep"] if answer != "Unknown" else None
+                                ),
                             }
                         )
 
