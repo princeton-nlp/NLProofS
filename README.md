@@ -29,8 +29,8 @@ Conference on Empirical Methods in Natural Language Processing (EMNLP), 2022
 
 ## Data Preprocessing
 
-1. Download the v3_May6_2022 version of [EntailmentBank](https://allenai.org/data/entailmentbank) (MD5: 9cb91896325157cee1f35616be0be179) and unzip it as `./data/entailment_trees_emnlp2021_data_v3/`.  
-1. Download the OWA version of [RuleTaker](https://allenai.org/data/proofwriter) (MD5: bf490364bca241bb5ff9f0ab0c78b71a) and unzip it as `./data/proofwriter-dataset-V2020.12.3/`.
+1. Download the v3_May6_2022 version of [EntailmentBank](https://drive.google.com/drive/folders/1YjjeZy9FEbXh-84-HjqOu8Rfve9oj1Te?usp=sharing) (MD5: 9cb91896325157cee1f35616be0be179) and unzip it as `./data/entailment_trees_emnlp2021_data_v3/`.  
+1. Download the OWA version of [RuleTaker](https://aristo-data-public.s3.amazonaws.com/proofwriter/proofwriter-dataset-V2020.12.3.zip) (MD5: bf490364bca241bb5ff9f0ab0c78b71a) and unzip it as `./data/proofwriter-dataset-V2020.12.3/`.
 1. Run `python check_data.py` to check.
 1. Run `python preprocess_ruletaker.py` to preprocess the RuleTaker dataset.
 
